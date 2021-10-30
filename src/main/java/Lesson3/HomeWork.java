@@ -1,5 +1,6 @@
 package Lesson3;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class HomeWork {
@@ -12,7 +13,9 @@ public class HomeWork {
         System.out.println();
         created2DArraysToTask4();
         System.out.println();
-        writingMethodForArray();
+//        writingMethodForArray();
+        System.out.println();
+        creatArraysToTask6();
 
     }
 //    1. Задать целочисленный массив, состоящий из элементов 0 и 1.
@@ -74,6 +77,7 @@ public class HomeWork {
         }
     }
 
+
 //    5. Написать метод, принимающий на вход два аргумента: len и initialValue,
 //    и возвращающий одномерный массив типа int длиной len,
 //    каждая ячейка которого равна initialValue;
@@ -91,4 +95,19 @@ public class HomeWork {
             System.out.print(array[i] + " ");
         }
     }
+//    6. * Задать одномерный массив и найти в нем минимальный и максимальный элементы.
+
+    static void creatArraysToTask6() {
+        int[] arr = {2, 4, 76, 4, 2, 7, 1, -342, 68, 89, 643};
+        Arrays.sort(arr);
+        int max = arr[arr.length - 1];
+        int min = arr[0];
+        System.out.println("Максимальный элемент массива это " + max);
+        System.out.println();
+        System.out.println("Минимальный элемент массива это " + min);
+    }
+
+//    7. ** Написать метод, в который передается не пустой одномерный целочисленный массив,
+//    метод должен вернуть true,
+//    если в массиве есть место, в котором сумма левой и правой части массива равны.
 }
