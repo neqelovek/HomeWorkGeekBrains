@@ -16,8 +16,8 @@ public class HomeWork {
         employee5.printInfo();
         System.out.println();
 
-        System.out.println("Сведенья о сотрудниках чей возраст привысил отметку 40 лет:");
-        Employees[] employees = {employee1,employee2,employee3,employee4,employee5};
+        System.out.println("Сведенья о сотрудниках чей возраст превысил отметку 40 лет:");
+        Employees[] employees = {employee1, employee2, employee3, employee4, employee5};
         for (Employees employee : employees) {
             if (employee.age > 40) {
                 System.out.println(employee);
