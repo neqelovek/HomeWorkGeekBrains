@@ -1,5 +1,8 @@
 package Lesson7;
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class HomeWork {
 //    Расширить задачу про котов и тарелки с едой
 // Добавить проверку, чтобы из тарелки нельзя было взять больше еды, чем в ней есть на текущий момент
@@ -10,14 +13,27 @@ public class HomeWork {
 // Всех котов направляем есть из этой тарелки. После прохода массива продемонстрировать,
 // какие коты стали сытые, а какие остались голодные. Значения можно придумать самому
 // Добавить в класс тарелки метод, позволяющий увеличивать количество еды в тарелке (просто прибавлять)
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
-        Cat cat = new Cat("Барсик", 7);
-        Plate plate = new Plate(55);
-        plate.info();
-        cat.eat(plate);
-        plate.info();
+        Cat cat1 = new Cat("Барсик");
+        Cat cat2 = new Cat("Мурзик");
+        Cat cat3 = new Cat("Черныш");
+        Cat cat4 = new Cat("Рыжик");
 
+        Plate plate = new Plate(0);
+
+        Cat [] cats = {cat1, cat2, cat3, cat4};
+
+       while (true) {
+           plate.addFood(3);
+           for (Cat cat : cats) {
+               cat.eat(plate);
+               System.out.printf("%s поел и его сытость: %s%n ", cat.getName(),cat.isSatietyCat());
+           }
+
+           plate.info();
+            Thread.sleep(3000);
+       }
 
 
 
