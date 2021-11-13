@@ -19,5 +19,24 @@ public  class Robot {
             System.out.println("Робот прыгает");
 
         }
+        public int getRun() {
+            return run;
+        }
+    }
+
+//    public int getRun() {
+//        return run;
+//    }
+
+    public void setRun(int run) {
+        this.run = run;
+    }
+
+    public int getJump() {
+        return jump;
+    }
+
+    public void setJump(int jump) {
+        this.jump = jump;
     }
 }

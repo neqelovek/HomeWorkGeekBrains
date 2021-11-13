@@ -15,20 +15,41 @@ public class HomeWork {
 //    4. * У препятствий есть длина (для дорожки) или высота (для стены), а участников ограничения на бег и прыжки.
 //    Если участник не смог пройти одно из препятствий, то дальше по списку он препятствий не идет.
 
-        Robot robot = new Robot(123, 4);
+        Robot robot = new Robot(12, 4);
+        Robot.Action robotAction = robot.new Action();
         Robot.Action robotRun = robot.new Action();
         Robot.Action robotJump = robot.new Action();
+        Robot.Action setRun = robot.new Action();
 
         Cat cat = new Cat(223, 5);
+        Cat.Action catAction = cat.new Action();
         Cat.Action catRun = cat.new Action();
         Cat.Action catJump = cat.new Action();
 
-        People people = new People(50,2);
+        People people = new People(50, 2);
+        People.Action peopleAction = people.new Action();
         People.Action peopleRun = people.new Action();
         People.Action peopleJump = people.new Action();
 
+        Wall wall = new Wall(40);
 
 
-
+        robotAction.robotRun();
+        robotAction.robotJump();
+        System.out.println();
+        catAction.catRun();
+        catAction.catJump();
+        System.out.println();
+        peopleAction.peopleRun();
+        peopleAction.peopleJump();
     }
+
+//
+//        public void breakingWall(){
+//            if (setRun > wall) {
+//                System.out.println("asfd");
+//            }
+//
+//        }
+//
 }
