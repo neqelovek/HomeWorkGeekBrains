@@ -1,6 +1,6 @@
 package Lesson10.fruit;
 
-public abstract class Fruit {
+public class Fruit {
     private final float weight;
 
     public Fruit(float weight) {
@@ -10,4 +10,6 @@ public abstract class Fruit {
     public float getWeight() {
         return weight;
     }
+
+
 }

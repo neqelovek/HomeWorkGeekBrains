@@ -1,5 +1,9 @@
 package Lesson10;
 
+import Lesson10.fruit.Apple;
+import Lesson10.fruit.Box;
+import Lesson10.fruit.Orange;
+
 public class HomeWork {
     public static void main(String[] args) {
 //        1. Написать метод, который меняет два элемента массива местами (массив может быть любого ссылочного типа);
@@ -25,9 +29,25 @@ public class HomeWork {
 
         String[] array = {"a", "b", "c", "d", "e", "f"};
         DoTask1 doTask1 = new DoTask1();
-        doTask1.changingArrayElements(array,0,5);
+        doTask1.changingArrayElements(array, 0, 5);
         System.out.println();
 
+
+        Box<Orange> box1 = new Box<>();
+        Box<Orange> box2 = new Box<>();
+        Box<Apple> box3 = new Box<>();
+        Box<Apple> box4 = new Box<>();
+        box1.addFruit(new Orange(), 11.5f);
+        box2.addFruit(new Orange(), 4.9f);
+        box3.addFruit(new Apple(), 7.5f);
+        box4.addFruit(new Apple(), 17.7f);
+        System.out.println("Box 1: " + box1.getWeight());
+        System.out.println("Box 2: " + box2.getWeight());
+        System.out.println("Box 3: " + box3.getWeight());
+        System.out.println("Box 4: " + box4.getWeight());
+        System.out.println(box1.compare(box2));
+        System.out.println(box3.compare(box4));
+        System.out.println(box1.compare(box4));
 
     }
 }
