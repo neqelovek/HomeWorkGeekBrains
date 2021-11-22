@@ -46,6 +46,7 @@ public class HomeWork {
         System.out.println("Box 3: " + box3.getWeight());
         System.out.println("Box 4: " + box4.getWeight());
         System.out.println(box1.compare(box2));
+        System.out.println(box2.compare(box3));
         System.out.println(box3.compare(box4));
         System.out.println(box1.compare(box4));
 
