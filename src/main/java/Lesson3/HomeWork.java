@@ -13,9 +13,22 @@ public class HomeWork {
         System.out.println();
         created2DArraysToTask4();
         System.out.println();
-//        writingMethodForArray();
+        writingMethodForArray();
         System.out.println();
         creatArraysToTask6();
+        System.out.println();
+        System.out.println(checkBalanceToTask7(new int[]{1, 1, 1, 1, 2, 2}));
+        System.out.println(checkBalanceToTask7(new int[]{1, 1, 1, 1, 1, 2, 2}));
+        System.out.println(checkBalanceToTask7(new int[]{1, 1, 1, 1, 2, 2, 2, 2}));
+        System.out.println(checkBalanceToTask7(new int[]{1, 1, 1, 1, 2, 2, 2}));
+        System.out.println();
+        shiftingNumberTotask8(new int[]{1, 2, 3, 4, 5, 6, 7}, 3);
+        shiftingNumberTotask8(new int[]{1, 2, 3, 4, 5, 6, 7, 7, 8, 9, 10}, 2222);
+        shiftingNumberTotask8(new int[]{1, 2, 3, 4}, 1);
+        shiftingNumberTotask8(new int[]{1, 2, 3, 4}, -1);
+        shiftingNumberTotask8(new int[]{1, 2, 3, 4,5,6,7,8,9}, -4);
+        shiftingNumberTotask8(new int[]{1, 2, 3, 4,5,6,7,8,8,9}, -111);
+
 
     }
 //    1. Задать целочисленный массив, состоящий из элементов 0 и 1.
@@ -110,4 +123,70 @@ public class HomeWork {
 //    7. ** Написать метод, в который передается не пустой одномерный целочисленный массив,
 //    метод должен вернуть true,
 //    если в массиве есть место, в котором сумма левой и правой части массива равны.
+
+    static boolean checkBalanceToTask7(int[] array) {
+        int leftSum = 0;
+        int rightSum = sum(array, 0, array.length);
+
+        if (rightSum % 2 != 0) {
+            return false;
+        }
+        for (int j : array) {
+
+            leftSum += j;
+            rightSum -= j;
+
+            if (leftSum == rightSum) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static int sum(int[] array, int start, int end) {
+        int sum = 0;
+        for (int i = start; i < end; i++) {
+            sum += array[i];
+        }
+        return sum;
+    }
+
+//    8. *** Написать метод, которому на вход подается одномерный массив и число n
+//    (может быть положительным, или отрицательным),
+//    при этом метод должен сместить все элементы массива на n позиций.
+//    Элементы смещаются циклично. Для усложнения задачи нельзя пользоваться вспомогательными массивами.
+//    \Примеры: [ 1, 2, 3 ] при n = 1 (на один вправо) -> [ 3, 1, 2 ]; [ 3, 5, 6, 1]
+//    при n = -2 (на два влево) -> [ 6, 1, 3, 5 ].
+//    При каком n в какую сторону сдвиг можете выбирать сами.
+
+    private static void shiftingNumberTotask8(int[] array, int n) {
+        int shiftNumber = n % array.length;
+        if (shiftNumber < 0){
+            shiftLeft(array, shiftNumber);
+        } else {
+            shiftRight(array,shiftNumber);
+        }
+        System.out.println(Arrays.toString(array) + " смещается на " + n);
+
+    }
+
+    private static void shiftRight(int[] array, int n) {
+        for (int i = 0; i < n; i++) {
+            int lestValue = array[array.length - 1];
+            for (int j = array.length - 1; j > 0; j--) {
+                array[j] = array[j - 1];
+            }
+            array[0] = lestValue;
+        }
+    }
+
+    private static void shiftLeft(int[] array, int n) {
+        for (int i = 0; i < Math.abs(n); i++) {
+            int firstValue = array[0];
+            for (int j = 0; j < array.length - 1; j++) {
+                array[j] = array[j + 1];
+            }
+            array[array.length - 1] = firstValue;
+        }
+    }
 }
