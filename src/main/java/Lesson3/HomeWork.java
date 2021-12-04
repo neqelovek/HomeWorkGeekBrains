@@ -173,9 +173,7 @@ public class HomeWork {
     private static void shiftRight(int[] array, int n) {
         for (int i = 0; i < n; i++) {
             int lestValue = array[array.length - 1];
-            for (int j = array.length - 1; j > 0; j--) {
-                array[j] = array[j - 1];
-            }
+            System.arraycopy(array, 0, array, 1, array.length - 1);
             array[0] = lestValue;
         }
     }
@@ -183,9 +181,7 @@ public class HomeWork {
     private static void shiftLeft(int[] array, int n) {
         for (int i = 0; i < Math.abs(n); i++) {
             int firstValue = array[0];
-            for (int j = 0; j < array.length - 1; j++) {
-                array[j] = array[j + 1];
-            }
+            System.arraycopy(array, 1, array, 0, array.length - 1);
             array[array.length - 1] = firstValue;
         }
     }
